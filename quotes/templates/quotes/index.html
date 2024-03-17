@@ -19,7 +19,7 @@
                 Tags:
 
                 {% for tag in quote.tags.all %}
-                <a class="tag" href="/tag/{{tag}}">{{tag}}</a>
+                <a class="tag" href="/tag/{{ tag.name }}">{{ tag.name }}</a>
                 {% endfor %}
 
             </div>
