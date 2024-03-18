@@ -4,7 +4,7 @@ from bson.objectid import ObjectId
 from pymongo import MongoClient
 
 
-client = MongoClient("mongodb://localhost:27000")
+client = MongoClient("mongodb://localhost:27017")
 
 db = client.hw10
 
