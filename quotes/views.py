@@ -6,19 +6,9 @@ from .utils import get_mongodb
 # from django.shortcuts import render, redirect
 # from django.core.paginator import Paginator
 # from .forms import AuthorForm, QuoteForm
-# from .models import Author
-from .models import Quote  # Підключаємо модель для роботи з базою даних SQLite
+from .models import Quote, Author
 
 
-# def main(request, page=1):
-#     db = get_mongodb()
-#     quotes = db.quotes.find()
-#     per_page = 10
-#     paginator = Paginator(list(quotes), per_page)
-#     quotes_on_page = paginator.page(page)
-#     return render(request, 'quotes/index.html', context={'quotes': quotes_on_page})
-#
-#
 def main(request, page=1):
     quotes = Quote.objects.all().order_by('-created_at')  # Отримуємо всі цитати з бази даних SQLite
     per_page = 10
@@ -26,6 +16,12 @@ def main(request, page=1):
     quotes_on_page = paginator.page(page)
     # return render(request, 'quotes/index.html', context={'title': 'Home', 'quotes': quotes_on_page})
     return render(request, 'quotes/index.html', context={'quotes': quotes_on_page})
+
+
+def author_detail(request, author_id):
+    author = Author.objects.get(pk=author_id)
+    return render(request, 'quotes/author_detail.html', {'author': author})
+
 #
 #
 # def authors(request, page=1):
@@ -48,6 +44,3 @@ def main(request, page=1):
 #                   context={'title': 'Add Author', 'page': 'add_author', "form": form})
 #
 #
-# def author_detail(request, author_id):
-#     author = Author.objects.get(pk=author_id)
-#     return render(request, 'quotes/author_detail.html', {'author': author})
