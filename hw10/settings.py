@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-ya=995l+xy)g-c0smr=rm=8kf6gkd2w)&le+!p1hhjmy97tgpb
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['quotes-vbit.koyeb.app']
 
 
 # Application definition
