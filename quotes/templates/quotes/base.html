@@ -25,13 +25,17 @@
             <div class="container">
                 <div class="row justify-content-end">
 
-                    {% if user.is_authenticated %}
                     <div class="col-auto">
-                        <a href="#" class="btn btn-primary">Add Author</a>
+                        <a href="{% url 'quotes:authors' %}" class="btn btn-primary">Browse Authors</a>
+                    </div>
+
+                    {% if user.is_authenticated %}
+                    <div class="col-auto" style="margin-left: 50px;">
+                        <a href="{% url 'quotes:add_author' %}" class="btn btn-primary">Add Author</a>
                     </div>
 
                     <div class="col-auto">
-                        <a href="#" class="btn btn-primary">Add Quote</a>
+                        <a href="{% url 'quotes:add_quote' %}" class="btn btn-primary">Add Quote</a>
                     </div>
 
                     <div class="col-auto">
@@ -46,7 +50,7 @@
                     </div>
 
                     {% else %}
-                    <div class="col-auto">
+                    <div class="col-auto" style="margin-left: 50px;">
                         <a href="{% url 'users:signup' %}" class="btn btn-primary">SignUp</a>
                     </div>
 
