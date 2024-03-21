@@ -10,7 +10,7 @@
     <form action="{% url 'quotes:add_quote' %}" method="post" enctype="multipart/form-data">
         {% csrf_token %}
         <div class="row">
-            <div class="col-md-9"> <!-- Ширина 3/4 -->
+            <div class="col-md-9">
                 <div class="mb-3">
                     <label for="author" class="form-label">Author</label>
                     {{ form.author }}
@@ -24,7 +24,7 @@
                 </div>
             </div>
 
-            <div class="col-md-3"> <!-- Ширина 1/4 -->
+            <div class="col-md-3">
                 <div class="mb-3 tags-wrapper" style="height: auto;">
                     <label for="tags" class="form-label">Tags</label>
                     <select name="tags" class="form-control tags-select" id="tags" size="15" multiple>
