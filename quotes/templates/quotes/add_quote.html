@@ -9,25 +9,32 @@
     {% endif %}
     <form action="{% url 'quotes:add_quote' %}" method="post" enctype="multipart/form-data">
         {% csrf_token %}
-        <div class="mb-3">
-            <label for="quote" class="form-label">New quote</label>
-            {{ form.quote }}
-            <span>{{form.errors.quote}}</span>
-        </div>
-        <div class="mb-3">
-            <label for="tags" class="form-label">Tags</label>
-            <select name="tags" class="form-control" id="tags" multiple>
-                {% for tag in form.tags.field.queryset %}
-                <option value="{{ tag.pk }}">{{ tag.name }}</option>
-                {% endfor %}
-            </select>
-            <span>{{ form.errors.tags }}</span>
-        </div>
+        <div class="row">
+            <div class="col-md-9"> <!-- Ширина 3/4 -->
+                <div class="mb-3">
+                    <label for="author" class="form-label">Author</label>
+                    {{ form.author }}
+                    <span>{{form.errors.author}}</span>
+                </div>
 
-        <div class="mb-3">
-            <label for="author" class="form-label">Author</label>
-            {{ form.author }}
-            <span>{{form.errors.author}}</span>
+                <div class="mb-3">
+                    <label for="quote" class="form-label">New quote</label>
+                    {{ form.quote }}
+                    <span>{{form.errors.quote}}</span>
+                </div>
+            </div>
+
+            <div class="col-md-3"> <!-- Ширина 1/4 -->
+                <div class="mb-3 tags-wrapper" style="height: auto;">
+                    <label for="tags" class="form-label">Tags</label>
+                    <select name="tags" class="form-control tags-select" id="tags" size="15" multiple>
+                        {% for tag in form.tags.field.queryset %}
+                        <option value="{{ tag.pk }}">{{ tag.name }}</option>
+                        {% endfor %}
+                    </select>
+                    <span>{{ form.errors.tags }}</span>
+                </div>
+            </div>
         </div>
 
         <button type="submit" class="btn btn-primary">Submit</button>
