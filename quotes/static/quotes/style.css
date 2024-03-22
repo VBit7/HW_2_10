@@ -80,3 +80,20 @@ a {
     color: #4582ec;
     text-decoration: none;
 }
+
+/*.navbar-nav {*/
+/*    background-color: #f8f9fa; !* колір фону *!*/
+/*    border: 1px solid #ced4da; !* рамка *!*/
+/*    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); !* тінь *!*/
+/*    padding: 10px; !* відступи *!*/
+/*    text-align: center; !* вирівнювання тексту *!*/
+/*}*/
+
+/*.nav-link {*/
+/*    color: #000000; !* колір тексту *!*/
+/*    transition: color 0.3s ease; !* анімація при зміні кольору тексту *!*/
+/*}*/
+
+/*.nav-link:hover {*/
+/*    color: #007bff; !* колір тексту при наведенні *!*/
+/*}*/
