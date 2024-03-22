@@ -28,6 +28,11 @@
     color: white;
     font-size: small;
     background-color: #7CA3E6;
+    text-decoration: none;
+}
+
+.about {
+    text-decoration: none;
 }
 
 ul.pager {
