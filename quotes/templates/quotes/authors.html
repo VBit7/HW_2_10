@@ -2,12 +2,13 @@
 
 
 {% block content %}
+
 <div class="row">
     {% for author in authors %}
-    <div class="col-md-4"> <!-- Замініть 3 на потрібний вам розмір колонки Bootstrap -->
+    <div class="col-md-4">
         <div class="quote" itemscope="" itemtype="http://schema.org/CreativeWork">
-            <small class="author" itemprop="author">{{ author.id }} - {{ author.fullname }}</small>
-            <a href="/author/{{ author.id }}" previewlistener="true">(about)</a>
+            <small class="author" itemprop="author">{{ author.fullname }}</small>
+            <a href="/author/{{ author.id }}" previewlistener="true" class="about">(about)</a>
         </div>
     </div>
     {% endfor %}
