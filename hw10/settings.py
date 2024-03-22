@@ -84,11 +84,11 @@ WSGI_APPLICATION = 'hw10.wsgi.application'
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": env('NAME'),
+        "NAME": env('NAME_DB'),
         "USER": env('USER_DB'),
-        "PASSWORD": env('PASSWORD'),
-        "HOST": env('HOST'),
-        "PORT": env('PORT'),
+        "PASSWORD": env('PASSWORD_DB'),
+        "HOST": env('HOST_DB'),
+        "PORT": env('PORT_DB'),
     }
 }
 
